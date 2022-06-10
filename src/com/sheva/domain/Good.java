@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Good {
 
-    public static int DEFAULT_PRODUCTION_YEAR = 2021;
+    public static final int DEFAULT_PRODUCTION_YEAR = 2021;
 
-    public static int DEFAULT_ITEM_PRICE = 2000;
+    public static final int DEFAULT_ITEM_PRICE = 2000;
 
     private String itemCategory;
 
@@ -36,22 +36,6 @@ public class Good {
         this.itemModel = itemModel;
         this.productionYear = productionYear;
         this.itemPrice = itemPrice;
-    }
-
-    public static int getDefaultProductionYear() {
-        return DEFAULT_PRODUCTION_YEAR;
-    }
-
-    public static void setDefaultProductionYear(int defaultProductionYear) {
-        DEFAULT_PRODUCTION_YEAR = defaultProductionYear;
-    }
-
-    public static int getDefaultItemPrice() {
-        return DEFAULT_ITEM_PRICE;
-    }
-
-    public static void setDefaultItemPrice(int defaultItemPrice) {
-        DEFAULT_ITEM_PRICE = defaultItemPrice;
     }
 
     public String getItemCategory() {

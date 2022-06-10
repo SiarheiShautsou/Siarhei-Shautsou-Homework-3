@@ -1,24 +1,24 @@
 package com.sheva.util;
 
 import com.sheva.domain.Student;
-import com.sun.source.tree.Tree;
 
+import java.util.Set;
 import java.util.TreeSet;
 
+import static com.sheva.util.NumberCheck.evenNumber;
 import static com.sheva.util.StudentInfoGeneration.generatorID;
 import static com.sheva.util.StudentInfoGeneration.nameGenerator;
 
 public class StudentSetGeneration {
 
-    public static TreeSet<Student> studentTreeSetGenerator(int count){
+    public static TreeSet<Student> studentTreeSetGenerator(int count) {
 
         TreeSet<Student> students = new TreeSet<>();
 
         for (int i = 0; i < count; i++) {
 
             int studentNumber = i + 1;
-            students.add(new Student(studentNumber, nameGenerator(), nameGenerator(),
-                    generatorID()));
+            students.add(new Student(studentNumber, nameGenerator(), nameGenerator(), generatorID()));
 
         }
 
@@ -26,14 +26,13 @@ public class StudentSetGeneration {
     }
 
 
-
-    public static void deleteOddNumberStudent(TreeSet<Student> s){
+    public static void deleteOddNumberStudent(Set<Student> s) {
 
         TreeSet<Student> students = new TreeSet<>();
 
         for (Student tempStudent : s) {
             int listNumber = tempStudent.getStudentListNumber();
-            if(listNumber % 2 != 0){
+            if (evenNumber(listNumber)) {
                 students.add(tempStudent);
             }
         }

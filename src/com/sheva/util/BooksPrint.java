@@ -14,9 +14,10 @@ public class BooksPrint {
         }
     }
 
-    public static void printBooksStartingVowel(Set<Book> set) {
+    public static void printBooksStartingWithVowel(Set<Book> set) {
 
-        String[] vowels = {"А", "Е", "Ё", "И", "О", "Ю", "Я", "Э"};
+        String[] vowels = {"А", "Е", "Ё", "И", "О", "Ю", "Я", "Э", "а", "е", "ё", "и", "о", "ю", "я", "э",
+                "A", "E", "I", "U", "O", "Y", "a", "e", "i", "u", "o", "y"};
 
         for (Book tempSetBook : set) {
             String gettingName = tempSetBook.getBookName();

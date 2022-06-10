@@ -1,22 +1,25 @@
 package com.sheva.util;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.Random;
 
 public class StudentInfoGeneration {
 
-    public static String nameGenerator(){
-        final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        StringBuilder builder = new StringBuilder();
-        while(builder.toString().length() == 0) {
-            int length = new Random().nextInt(4) + 8;
-            for(int i = 0; i < length; i++) {
-                builder.append(letters.charAt(new Random().nextInt(letters.length())));
-            }
-        }
-        return builder.toString();
+    public static String nameGenerator() {
+
+        /* This is a name generator in the range of 3 to 10 characters. */
+
+        int length = (int) (Math.random() * 10 + 3);
+        boolean useLetters = true;
+        boolean useNumbers = false;
+
+        return RandomStringUtils.random(length, useLetters, useNumbers);
     }
 
-    public static int generatorID(){
+    public static int generatorID() {
+
+        /* This is an ID number generation from six numbers. */
 
         int minValue = 100000;
         int maxValue = 999999;
